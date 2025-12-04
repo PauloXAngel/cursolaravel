@@ -1,6 +1,9 @@
 <?php
 use Pdo\Mysql;
 use Illuminate\Support\Str;
+use Iluminate\Database\DBAL\TimestampType;
+
+
 
 return [
 
@@ -180,6 +183,11 @@ return [
             'backoff_cap' => env('REDIS_BACKOFF_CAP', 1000),
         ],
 
+    ],
+    'dbal' => [
+        'types' => [
+            'timestamp' => TimestampType::class,
+        ],
     ],
 
 ];
