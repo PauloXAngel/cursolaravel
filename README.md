@@ -1,102 +1,89 @@
-📘 Curso de Laravel – Projeto de Estudos
+# 📘 Curso de Laravel – Projeto de Estudos
 
-Este repositório contém meu projeto de estudos do Curso de Laravel, onde estou desenvolvendo passo a passo os principais conceitos do framework. Aqui documento meu progresso, comandos utilizados, anotações e novos aprendizados.
+Repositório dedicado ao meu aprendizado no **Curso de Laravel**, onde pratico conceitos fundamentais do framework, incluindo migrations, models, rotas e manipulação de banco de dados.
 
-🚀 Sobre o Projeto
+---
 
-Este projeto foi criado com o objetivo de:
+## 🚀 Sobre o Projeto
 
-Aprender a estruturar um projeto Laravel moderno (Laravel 12.x)
+Objetivos principais:
 
-Praticar criação e administração de banco de dados
+- Aprender a estruturar um projeto Laravel (versão 12.x)
+- Criar e manipular banco de dados via migrations
+- Entender o fluxo de models, controllers e rotas
+- Usar Laragon + MySQL/MariaDB no ambiente de desenvolvimento
+- Versionar o projeto com Git e GitHub
 
-Configurar ambiente de desenvolvimento (Laragon)
+---
 
-Entender como funciona o fluxo de migrations, models e controllers
+## 🛠 Tecnologias Utilizadas
 
-Criar uma base sólida de backend em PHP com Laravel
+- PHP **8.4.x**
+- Laravel **12.x**
+- Composer
+- MySQL / MariaDB
+- Laragon
+- Git + GitHub
 
-🛠️ Tecnologias Utilizadas
+---
 
-PHP 8.4.x
+## 📚 Aprendizados
 
-Laravel 12.x
+### 🔹 Migrations e Banco de Dados
 
-Composer
+Criação de migrations:
 
-MySQL / MariaDB
-
-Laragon
-
-Git + GitHub
-
-📚 Aprendizados até agora
-✅ Configuração de ambiente
-
-Instalação e uso do Laragon
-
-Configuração da versão correta de PHP
-
-Conexão do Laravel com MySQL (.env)
-
-📦 Migrations e Banco de Dados
-✔ Criação de tabelas
-
-Aprendi a usar:
-
+```bash
 php artisan make:migration create_nome_da_tabela_table
+Modificação de colunas:
 
-✔ Modificação de colunas
-
-Para adicionar/remover/alterar campos utilizamos novas migrations, mantendo histórico:
-
+bash
+Copiar código
 php artisan make:migration add_campo_to_tabela_table
 php artisan make:migration modify_coluna_in_tabela_table
+Comandos úteis:
 
-✔ Exclusão de tabelas
-Schema::dropIfExists('tabela');
+bash
+Copiar código
+php artisan migrate
+php artisan migrate:fresh
+php artisan migrate:rollback
+php artisan migrate:status
+🔹 Models
+Criação de models:
 
-✔ Controle de versão com up() e down()
+bash
+Copiar código
+php artisan make:model Nome
+Uso do trait HasFactory (mesmo no Laravel 9 ou 12):
 
-Uso correto para criar e reverter mudanças no banco.
+php
+Copiar código
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+Factories e Seeders serão adicionados futuramente — ainda não fazem parte deste módulo do curso.
 
-✔ Artisan Commands importantes
-Comando	Função
-php artisan migrate	Executa migrations
-php artisan migrate:fresh	Reseta e recria todas as tabelas
-php artisan migrate:rollback	Desfaz a última migration
-php artisan migrate:status	Lista migrations aplicadas
-🧩 Eloquent Models
-
-Criação de modelos com make:model
-
-Relacionamentos (serão aprofundados mais adiante)
-
-Observação: Factories e Seeders serão aprendidos futuramente, mas ainda não fazem parte deste módulo.
-
-📁 Estrutura do Projeto
+📁 Estrutura Geral do Projeto
+pgsql
+Copiar código
 app/
 database/
   └── migrations/
 routes/
 .env
 composer.json
-
-📝 Objetivos Próximos
-
+📝 Próximos Passos
 Criar Controllers e rotas
 
-Trabalhar com Requests e validações
+Trabalhar com validação (Form Request)
 
-Aprender Eloquent avançado (relacionamentos)
+Aprender relacionamentos Eloquent
 
-Criar API básica
+Criar uma API simples
 
-Aplicar Blade templates
+Blade templates
 
-Inserir Seeders e Factories futuramente
+Seeders e Factories (em módulo futuro)
 
-💡 Observações
-
-Este repositório é atualizado conforme avanço no curso.
-O foco principal é aprender boas práticas e construir uma base sólida em Laravel.
+💡 Observação
+Este repositório será atualizado conforme avanço no curso.
+O foco é aprender boas práticas e desenvolvimento moderno com Laravel.
