@@ -17,18 +17,25 @@ return new class extends Migration
             $table->text('descricao');
             $table->double('preco', 10, 2);
             $table->string('slug');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
 
+            // Relacionamento com users
             $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdade('cascade');
+            $table->foreign('id_user')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
+            // Relacionamento com categorias
             $table->unsignedBigInteger('id_categoria');
-            $table->foreign('id_categoria')->references('id')->on('users')->onDelete('cascade')->onUpdade('cascade');
+            $table->foreign('id_categoria')
+                ->references('id')
+                ->on('categorias') // <-- aqui estava errado no seu
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->timestamps();
-        
-
-
         });
     }
 
