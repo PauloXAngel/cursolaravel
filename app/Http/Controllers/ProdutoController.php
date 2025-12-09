@@ -11,17 +11,9 @@ class ProdutoController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        // //return "index";
-        // $produtos = Produto::all();
-        // Return dd($produtos);
-        // return view('site.produtos', ['produtos' => $produtos]);
-        $nome = 'Paulo';
-        $idade = 26;
-        $frutas = [];
-        $html =  "<h1>Olá eu sou h1</h1>";
-        return view('site.home',
-        compact('nome', 'idade', 'html', 'frutas'));
+    {     
+        $produtos = Produto::all();
+        return view('site.home', compact('produtos'));
     }
 
     /**
