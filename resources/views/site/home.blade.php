@@ -1,12 +1,14 @@
 @extends('site.layout')
 @section('title', 'Essa é a página HOME')
-
-
 @section('conteudo')
 
 {{-- Estrutura de controle --}}
-{{--isset($nome) ? 'existe' : 'não existe' --}}
 
-{{ $teste ?? 'padrão' }}
+@for ($i = 0; $i <=10; $i++)
+    <p>O valor de i é: {{ $i }} <br>
+@endfor
 
 @endsection
+
+// mt sono, parei no while 
+
