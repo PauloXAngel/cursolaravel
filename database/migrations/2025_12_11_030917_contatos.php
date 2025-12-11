@@ -16,14 +16,10 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('cep');
             $table->string('numero');
-            $table->string('whatsapp');
+            $table->text('whatsapp');
             $table->timestamps();
             $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -20,18 +20,13 @@ return new class extends Migration
         Schema::create('regras_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')
-                ->references('id')
-                ->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
 
             $table->unsignedBigInteger('id_regra');
-            $table->foreign('id_regra')
-                ->references('id')
-                ->on('regras');
+            $table->foreign('id_regra')->references('id')->on('regras');
 
             $table->timestamps();
         });
-
     }
 
     /**
@@ -40,7 +35,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('regras');
-        Schema::dropIfExists('regra_user');
+        Schema::dropIfExists('regras_user');
 
     }
 };
